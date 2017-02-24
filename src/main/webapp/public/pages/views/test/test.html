@@ -1,0 +1,34 @@
+<div class="container">
+	<div ng-show="model.error" class="alert alert-danger">
+		{{model.error}}</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Test Message</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td><input ng-model="model.val" placeholder="message"
+					class="form-control" /></td>
+				<td>
+					<button ng-click="model.createMessage(model.val)"
+						class="btn btn-primary pull-right">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="message in model.messages">
+				<td>{{message.val}}</td>
+				<td>
+					<button ng-click="model.deleteMessage(message)"
+						class="btn btn-danger pull-right">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
